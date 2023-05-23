@@ -26,31 +26,25 @@ public class College
         this.campusRating = campusRating;
     }
 
-    //getters
-    public String getName()
+    //brain methods
+    public Double totalPrice()
     {
-        return name;
+        return avgTuition + bookPrice;
     }
 
-    public String getLocation()
+    public boolean isWorth()
     {
-        return location;
+        if()
     }
 
-    public Double getAvgTuition()
-    {
-        return avgTuition;
-    }
 
-    public Double getBookPrice()
+    //toString
+    public String toString()
     {
-        return bookPrice;
+        String output = name + "\nLocated in:  " + location + "\nAverage Tuition for 4 years: $" + avgTuition +
+                        "\nBook Price: $" + bookPrice + "\nAcceptance Rate: %" + accRate +
+                        "\nOut of State Price: $" + outOfStatePrice +  "\nMinimum GPA: " + minGpa +
+                        "\nAmount of Majors: " + majorsOffered + "\nRating: " + campusRating + "/10";
+        return output;
     }
-
-    public Double getOutOfStatePrice()
-    {
-        return outOfStatePrice;
-    }
-
-    public Double
 }
