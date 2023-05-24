@@ -32,9 +32,15 @@ public class College
         return avgTuition + bookPrice;
     }
 
-    public boolean isWorth()
+    public void isWorth(boolean inState)
     {
-        if()
+        if(inState)
+        {
+            if(totalPrice() >= 10000 && campusRating < 5)
+            {
+                System.out.println(name + " is not worth to go to without a scholarship.");
+            }
+        }
     }
 
 
