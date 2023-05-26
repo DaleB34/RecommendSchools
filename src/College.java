@@ -32,13 +32,41 @@ public class College
         return avgTuition + bookPrice;
     }
 
-    public void isWorth(boolean inState)
+    public String isWorth(boolean inState)
     {
         if(inState)
         {
             if(totalPrice() >= 10000 && campusRating < 5)
             {
-                System.out.println(name + " is not worth to go to without a scholarship.");
+                return name + " is not worth to go to without a scholarship.";
+            }
+            else if(totalPrice() < 10000)
+            {
+                return name + " is worth to go to.";
+            }
+            else if(campusRating <= 10 && campusRating >= 7)
+            {
+                return name + " is worth to go to.";
+            }
+            else
+            {
+                return " It is up to you if it is worth to go to " + name;
+            }
+
+
+        }//end inState responses
+
+        else
+        {
+            if(totalPrice() >= 20000 && campusRating <= 6)
+                return name + " is not worth to go to";
+            else if(totalPrice() <15000)
+                return name + " is worth to go to";
+            else if (campusRating >= 7)
+                return name + "is worth to go to";
+            else
+            {
+                return "It is up to you if it is worth to go to " + name;
             }
         }
     }
