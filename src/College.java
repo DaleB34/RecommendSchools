@@ -26,6 +26,25 @@ public class College
         this.campusRating = campusRating;
     }
 
+    //getters
+
+    public Double getAccRate()
+    {
+        return accRate;
+    }
+
+    public Double getGpa()
+    {
+        return minGpa;
+    }
+
+    public int getRating()
+    {
+        return campusRating;
+    }
+
+    //end getters
+
     //brain methods
     public Double totalPrice()
     {
@@ -56,7 +75,7 @@ public class College
 
         }//end inState responses
 
-        else
+        else // out of state responses
         {
             if(totalPrice() >= 20000 && campusRating <= 6)
                 return name + " is not worth to go to";
@@ -68,9 +87,10 @@ public class College
             {
                 return "It is up to you if it is worth to go to " + name;
             }
-        }
+        }// end out of state responses
     }
 
+    //end brain methods
 
     //toString
     public String toString()

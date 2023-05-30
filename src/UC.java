@@ -18,11 +18,10 @@ public class UC extends College
 
     public UC(String name, String location, Double avgTuition, Double accRate,
               Double minGpa, Double outOfStatePrice, Double bookPrice, int majorsOffered, int campusRating,
-              int numDegrees, boolean isGradSchool , Double dormPrice, Double mealPrice)
+              int numDegrees, Double dormPrice, Double mealPrice)
     {
         super(name, location, avgTuition, accRate, minGpa, outOfStatePrice, bookPrice, majorsOffered, campusRating);
         this.numDegrees = numDegrees;
-        this.isGradSchool = isGradSchool;
         this.dormPrice = dormPrice;
         this. mealPrice = mealPrice;
     }
