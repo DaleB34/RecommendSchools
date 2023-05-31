@@ -12,23 +12,21 @@ public class PrivateUni extends College
     private int campusRating;
     private Double flightPrice;
     private Double dormPrice;
-    private Double mealPrice;
     private String[] mainMajors;
     //end instance variables
 
     public PrivateUni(String name, String location, Double avgTuition, Double accRate,
               Double minGpa, Double outOfStatePrice, Double bookPrice, int majorsOffered, int campusRating,
-              Double flightPrice, Double dormPrice, Double mealPrice, String[]mainMajors)
+              Double flightPrice, Double dormPrice, String[]mainMajors)
     {
         super(name, location, avgTuition, accRate, minGpa, outOfStatePrice, bookPrice, majorsOffered, campusRating);
         this.flightPrice =flightPrice;
         this.dormPrice = dormPrice;
-        this.mealPrice = mealPrice;
         this.mainMajors = mainMajors;
     }
 
     public Double totalPrice()
     {
-        return flightPrice + dormPrice + mealPrice + avgTuition + bookPrice;
+        return flightPrice + dormPrice + avgTuition + bookPrice;
     }
 }
