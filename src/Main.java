@@ -18,6 +18,5 @@ public class Main {
                         ,43473.23, 1574.59, 125, 9, 15374.76);
         CalState usd = new CalState("San Diego State University", "San Diego, California", 8136.42, 46.9
                                     ,3.0, 20016.81, 1079.43, 86, 10, 30.9);
-        CalState
     }
 }
