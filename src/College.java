@@ -51,19 +51,18 @@ public class College
         return avgTuition + bookPrice;
     }
 
-    public String isWorth(boolean inState)
+    public String isWorth()
     {
-        if(inState)
-        {
-            if(totalPrice() >= 10000 && campusRating < 5)
+       
+            if(totalPrice() >= 5000 && campusRating < 6)
             {
-                return name + " is not worth to go to without a scholarship.";
+                return name + " is not worth to go to";
             }
-            else if(totalPrice() < 10000)
+            else if(totalPrice() < 3000)
             {
                 return name + " is worth to go to.";
             }
-            else if(campusRating <= 10 && campusRating >= 7)
+            else if(campusRating <= 10 && campusRating >= 6)
             {
                 return name + " is worth to go to.";
             }
@@ -72,22 +71,6 @@ public class College
                 return " It is up to you if it is worth to go to " + name;
             }
 
-
-        }//end inState responses
-
-        else // out of state responses
-        {
-            if(totalPrice() >= 20000 && campusRating <= 6)
-                return name + " is not worth to go to";
-            else if(totalPrice() <15000)
-                return name + " is worth to go to";
-            else if (campusRating >= 7)
-                return name + "is worth to go to";
-            else
-            {
-                return "It is up to you if it is worth to go to " + name;
-            }
-        }// end out of state responses
     }
 
     //end brain methods
