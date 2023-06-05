@@ -3,17 +3,17 @@ public class College
     //instance variables
     private String name;
     private String location;
-    private Double avgTuition;
+    private int avgTuition;
     private Double accRate; //in percent
     private Double minGpa;
-    private Double outOfStatePrice;
-    private Double bookPrice;
+    private int outOfStatePrice;
+    private int bookPrice;
     private int majorsOffered;
     private int campusRating;
     // end instance variables
 
-    public College(String name, String location, Double avgTuition, Double accRate,
-                   Double minGpa, Double outOfStatePrice, Double bookPrice, int majorsOffered, int campusRating)
+    public College(String name, String location, int avgTuition, Double accRate,
+                   Double minGpa, int outOfStatePrice, int bookPrice, int majorsOffered, int campusRating)
     {
         this.name = name;
         this.location = location;
@@ -28,6 +28,10 @@ public class College
 
     //getters
 
+    public String getName()
+    {
+        return name;
+    }
     public Double getAccRate()
     {
         return accRate;
@@ -46,7 +50,7 @@ public class College
     //end getters
 
     //brain methods
-    public Double totalPrice()
+    public int totalPrice()
     {
         return avgTuition + bookPrice;
     }

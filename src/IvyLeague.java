@@ -3,30 +3,29 @@ public class IvyLeague extends College
     //instance variables
     private String name;
     private String location;
-    private Double avgTuition;
+    private int avgTuition;
     private Double accRate; //in percent
     private Double minGpa;
-    private Double outOfStatePrice;
-    private Double bookPrice;
+    private int outOfStatePrice;
+    private int bookPrice;
     private int majorsOffered;
     private int campusRating;
-    private Double flightPrice;
-    private Double dormPrice;
+    private int dormPrice;
     private String[] mainMajors;
     //end instance variables
 
-    public IvyLeague(String name, String location, Double avgTuition, Double accRate,
-              Double minGpa, Double outOfStatePrice, Double bookPrice, int majorsOffered, int campusRating,
-              Double flightPrice, Double dormPrice, String[]mainMajors)
+    public IvyLeague(String name, String location, int avgTuition, Double accRate,
+              Double minGpa, int outOfStatePrice, int bookPrice, int majorsOffered, int campusRating,
+                     int dormPrice, String[]mainMajors)
     {
         super(name, location, avgTuition, accRate, minGpa, outOfStatePrice, bookPrice, majorsOffered, campusRating);
         this.dormPrice = dormPrice;
         this.mainMajors = mainMajors;
     }
 
-    public Double totalPrice()
+    public int totalPrice()
     {
-        return flightPrice + dormPrice + avgTuition + bookPrice;
+        return dormPrice + avgTuition + bookPrice;
     }
 
     @Override

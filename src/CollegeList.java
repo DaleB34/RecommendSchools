@@ -7,11 +7,12 @@ public class CollegeList
     private College[] colleges;
     private int count = 0;
     private ArrayList<College> recColleges;
+    private College blank = new College("", "", 0, 0.0,0.0,0,0,0,0);
 
     public CollegeList(String name, int numColleges)
     {
         this.name = name;
-        this.numColleges = numColleges;
+        colleges = new College[numColleges];
     }
 
     public void addCollege(College c)
@@ -20,7 +21,7 @@ public class CollegeList
         count++;
     }
 
-    public College filter(College c, int pPrice, int pAccRate, double pGpa, int pRating)
+    public College filter(College c, int pPrice, Double pAccRate, double pGpa, int pRating)
     {
         //method filters off of user's preferences
         //only filters a SINGULAR college, so needs to be in a loop
@@ -38,23 +39,44 @@ public class CollegeList
         if(conditions >= 3)
             return c;
         else
-            return null;
+            return blank;
     } //end filter method
+
 
     //filters all the colleges
     //needs to be in CollegeList since uhhhhhhhhh 
-    //because 
-    public void filterAll()
+    //because need to access one set of inputs multiple times
+    //and because i said so
+    public void filterAll() //start filterAll
     {
-        Scanner scan = new Scanner(system.in);
-    }
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter your budget: ");
+        int budget = s.nextInt();
+        System.out.print("Enter the minimum acceptance rate in percent: ");
+        Double aRate = s.nextDouble();
+        System.out.print("Enter your GPA: ");
+        Double gpa = s.nextDouble();
+        System.out.print("Enter the minimum rating you want out of 10: ");
+        int rating = s.nextInt();
+
+        //in normal for loop because class inheritance issues could be a problem
+        for(int i = 0; i < count; i++)
+        {
+            filter(colleges[i], budget, aRate, gpa, rating);
+        }
+
+    }// end filterAll
 
     public void printRecs()
     {
         String output = "";
         for(int i = 0; i < count; i++)
         {
-
+            if(recColleges.get(i).getName() != "")
+            {
+                output += recColleges.get(i).toString() + "\n" + recColleges.get(i).isWorth();
+            }
         }
-    }
-}
+    }//end printRecs
+
+}//end class
