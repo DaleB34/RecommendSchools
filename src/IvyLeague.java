@@ -23,6 +23,7 @@ public class IvyLeague extends College
         this.mainMajors = mainMajors;
     }
 
+    @Override
     public int totalPrice()
     {
         return dormPrice + avgTuition + bookPrice;
@@ -34,20 +35,29 @@ public class IvyLeague extends College
        
             if(totalPrice() >= 100000 && campusRating < 6)
             {
-                return name + " is not worth to go to";
+                return getName() + " is not worth to go to";
             }
             else if(totalPrice() < 80000)
             {
-                return name + " is worth to go to.";
+                return getName() + " is worth to go to.";
             }
             else if(campusRating <= 10 && campusRating >= 6)
             {
-                return name + " is worth to go to.";
+                return getName() + " is worth to go to.";
             }
             else
             {
-                return " It is up to you if it is worth to go to " + name;
+                return " It is up to you if it is worth to go to " + getName();
             }
 
+    }
+
+    @Override
+    public String toString()
+    {
+        String output = super.toString() + "\nDorm Price: $" + dormPrice + "\nMain Majors: " ;
+        for(String m : mainMajors)
+            output+= m + " ";
+        return output;
     }
 }

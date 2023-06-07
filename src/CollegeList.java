@@ -6,12 +6,14 @@ public class CollegeList
     private String name;
     private College[] colleges;
     private int count = 0;
-    private ArrayList<College> recColleges;
+    private int numColleges;
+    private ArrayList<College> recColleges = new ArrayList<College>();
     private College blank = new College("", "", 0, 0.0,0.0,0,0,0,0);
 
     public CollegeList(String name, int numColleges)
     {
         this.name = name;
+        this.numColleges = numColleges;
         colleges = new College[numColleges];
     }
 
@@ -62,7 +64,9 @@ public class CollegeList
         //in normal for loop because class inheritance issues could be a problem
         for(int i = 0; i < count; i++)
         {
-            filter(colleges[i], budget, aRate, gpa, rating);
+            //this did not work at first because i forgot to actually
+            //add the object to a list
+            recColleges.add(filter(colleges[i], budget, aRate, gpa, rating));
         }
 
     }// end filterAll
@@ -70,13 +74,14 @@ public class CollegeList
     public void printRecs()
     {
         String output = "";
-        for(int i = 0; i < count; i++)
+        for(int i = 1; i < recColleges.size(); i++)
         {
             if(recColleges.get(i).getName() != "")
             {
-                output += recColleges.get(i).toString() + "\n" + recColleges.get(i).isWorth();
+                output += "\n" + recColleges.get(i).toString() + "\n" + recColleges.get(i).isWorth() + "\n";
             }
         }
+        System.out.println(output);
     }//end printRecs
 
 }//end class

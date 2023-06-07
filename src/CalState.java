@@ -27,21 +27,27 @@ public class CalState extends College
        
             if(totalPrice() >= 15000 && campusRating < 6)
             {
-                return name + " is not worth to go to";
+                return getName() + " is not worth to go to";
             }
             else if(totalPrice() < 11000)
             {
-                return name + " is worth to go to.";
+                return getName() + " is worth to go to.";
             }
             else if(campusRating <= 10 && campusRating >= 6)
             {
-                return name + " is worth to go to.";
+                return getName() + " is worth to go to.";
             }
             else
             {
-                return " It is up to you if it is worth to go to " + name;
+                return " It is up to you if it is worth to go to " + getName();
             }
 
+    }
+    @Override
+    public String toString()
+    {
+        String output = super.toString() + "\nTransfer Rate: " + transferRate + "%";
+        return output;
     }
 
 

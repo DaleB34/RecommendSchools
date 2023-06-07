@@ -22,6 +22,7 @@ public class UC extends College
         this.dormPrice = dormPrice;
     }
 
+    @Override
     public int totalPrice()
     {
         return avgTuition + bookPrice + dormPrice;
@@ -33,21 +34,28 @@ public class UC extends College
        
             if(totalPrice() >= 50000 && campusRating < 6)
             {
-                return name + " is not worth to go to";
+                return getName() + " is not worth to go to";
             }
             else if(totalPrice() < 31000)
             {
-                return name + " is worth to go to.";
+                return getName() + " is worth to go to.";
             }
             else if(campusRating <= 10 && campusRating >= 6)
             {
-                return name + " is worth to go to.";
+                return getName() + " is worth to go to.";
             }
             else
             {
-                return " It is up to you if it is worth to go to " + name;
+                return " It is up to you if it is worth to go to " + getName();
             }
 
+    }
+
+    @Override
+    public String toString()
+    {
+        String output = super.toString() + "\nDorm Price: $" + dormPrice;
+        return output;
     }
 
 
