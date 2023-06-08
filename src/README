@@ -1,0 +1,20 @@
+Recommend Schools CSA Final Project
+
+Description:
+A program that recommends the user colleges to go to based on their budget, gpa, preferred acceptance rate and campus life rating.
+
+How to play:
+Run the program
+Enter your budget, preferred acceptance rate, gpa, and preferred campus rating in the console as it prompts you
+Boom! Finished!
+
+Special Features:
+When it prints out your recommendations, it also includes the total price of a year of attending the college (not factoring in abroad prices) and if it is 'worth' to go there or not
+
+Class Composition:
+Main - Parent
+CollegeList  - Parent
+College - Parent
+CalState - Child of College
+UC - Child of College
+IvyLeague - Child of College

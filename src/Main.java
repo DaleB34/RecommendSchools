@@ -3,12 +3,12 @@ public class Main {
     {
 
         //intialized variables
-        String[] floppaMajors = {"Flopping", "Idk"};
+        String[] floppaMajors = {"Flopping,", "Idk,", "Exploding Stuff"};
         IvyLeague floppaU = new IvyLeague("Floppa University", "FloppaLand", 12345, 1000.0
                                             , 0.2, 0, 0, 10000
                                             , 999, 0, floppaMajors);
         //floppaU on top
-        String[] stanMajors = {"Law", "Engineering", "Medicine"};
+        String[] stanMajors = {"Law,", "Engineering,", "Medicine"};
         IvyLeague stanford = new IvyLeague("Stanford University", "Stanford, California", 56169
                                             ,3.9, 3.9, 56169, 825, 57
                                             ,9, 23692, stanMajors);
@@ -26,9 +26,13 @@ public class Main {
                                     3.0, 10120, 42, 22, 3);
         College rcc = new College ("Riverside City College", "Riverside, California", 1432, 100.0,
                                     2.0, 10120, 1440, 40, 5);
+        String[] cacaMajors = {"Nothing,", "Underwater Basket weaving"};
+        IvyLeague caca = new IvyLeague("Caca University", "PoopLand", 1010101, 0.2, 4.3,
+                        130000, 9999, 2, 1, 100000, cacaMajors);
         //initialize variables
 
-        CollegeList colleges = new CollegeList("Yes", 8);
+        CollegeList colleges = new CollegeList("Yes", 9);
+        colleges.addCollege(caca);
         colleges.addCollege(floppaU);
         colleges.addCollege(stanford);
         colleges.addCollege(sanDiego);

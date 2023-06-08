@@ -74,9 +74,10 @@ public class CollegeList
     public void printRecs()
     {
         String output = "";
-        for(int i = 1; i < recColleges.size(); i++)
+        for(int i = 0; i < recColleges.size(); i++)
         {
-            if(recColleges.get(i).getName() != "")
+            //skips past the "blank" objects
+            if(!recColleges.get(i).getName().equals(""))
             {
                 output += "\n" + recColleges.get(i).toString() + "\n" + recColleges.get(i).isWorth() + "\n";
             }
